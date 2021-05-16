@@ -388,6 +388,31 @@ please preview your site before committing, and make sure to run
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
 
+<h3>Install R and RStudio</h3>
+
+<p>
+    Please install a recent version of R and RStudio, as well as a few required R packages.
+    The <a href="https://datacarpentry.org/R-ecology-lesson/#Preparations">setup instructions</a> can be found at the overview site of the <a href="https://datacarpentry.org/R-ecology-lesson/">Data Analysis and Visualization in R for Ecologists</a> lesson.
+    If you encounter any problems, you can get help during the troubleshooting session on the day before the workshop.
+</p>
+
+{% comment %}
+These are the installation instructions for the tools used
+during the workshop.
+
+{% if site.carpentry == "swc" %}
+{% include swc/setup.html %}
+{% elsif site.carpentry == "dc" %}
+{% include dc/setup.html %}
+{% elsif site.carpentry == "lc" %}
+{% include lc/setup.html %}
+{% elsif site.carpentry == "pilot" %}
+Please check the "Setup" page of
+[the lesson site]({{ site.lesson_site }}) for instructions to follow
+to obtain the software and data you will need to follow the lesson.
+{% endif %}
+{% endcomment %}
+
 {% comment %}
 For online workshops, the section below provides:
 - installation instructions for the Zoom client
@@ -400,21 +425,4 @@ to include the relevant installation instrucctions.
 {% endcomment %}
 {% if online != "false" %}
 {% include install_instructions/videoconferencing.html %}
-{% endif %}
-
-{% comment %}
-These are the installation instructions for the tools used
-during the workshop.
-{% endcomment %}
-
-{% if site.carpentry == "swc" %}
-{% include swc/setup.html %}
-{% elsif site.carpentry == "dc" %}
-{% include dc/setup.html %}
-{% elsif site.carpentry == "lc" %}
-{% include lc/setup.html %}
-{% elsif site.carpentry == "pilot" %}
-Please check the "Setup" page of
-[the lesson site]({{ site.lesson_site }}) for instructions to follow
-to obtain the software and data you will need to follow the lesson.
 {% endif %}
